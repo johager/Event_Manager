@@ -20,6 +20,8 @@
 		F8A7D9E527F749C200F55DD0 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9E427F749C200F55DD0 /* EventListViewController.swift */; };
 		F8A7D9E727F749DB00F55DD0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9E627F749DB00F55DD0 /* EventDetailViewController.swift */; };
 		F8A7D9E927F74BFD00F55DD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9E827F74BFD00F55DD0 /* EventTableViewCell.swift */; };
+		F8A7D9EB27F759B000F55DD0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9EA27F759B000F55DD0 /* Date+.swift */; };
+		F8A7D9ED27F75CFE00F55DD0 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F8A7D9E427F749C200F55DD0 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		F8A7D9E627F749DB00F55DD0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		F8A7D9E827F74BFD00F55DD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		F8A7D9EA27F759B000F55DD0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			children = (
 				F8A7D9C127F7432D00F55DD0 /* AppDelegate.swift */,
 				F8A7D9C327F7432D00F55DD0 /* SceneDelegate.swift */,
+				F8A7D9EA27F759B000F55DD0 /* Date+.swift */,
 				F8A7D9DE27F7453500F55DD0 /* Strings.swift */,
 				F8A7D9CA27F7432E00F55DD0 /* Assets.xcassets */,
 				F8A7D9CF27F7432E00F55DD0 /* Info.plist */,
@@ -107,6 +112,7 @@
 				F8A7D9D927F744AE00F55DD0 /* DataModel.xcdatamodeld */,
 				F8A7D9E027F745D300F55DD0 /* Event.swift */,
 				F8A7D9E227F746DE00F55DD0 /* EventController.swift */,
+				F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */,
 			);
 			path = "Model & Model Controllers";
 			sourceTree = "<group>";
@@ -191,10 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A7D9EB27F759B000F55DD0 /* Date+.swift in Sources */,
 				F8A7D9DB27F744AE00F55DD0 /* DataModel.xcdatamodeld in Sources */,
 				F8A7D9C227F7432D00F55DD0 /* AppDelegate.swift in Sources */,
 				F8A7D9DF27F7453500F55DD0 /* Strings.swift in Sources */,
 				F8A7D9E727F749DB00F55DD0 /* EventDetailViewController.swift in Sources */,
+				F8A7D9ED27F75CFE00F55DD0 /* SortBy.swift in Sources */,
 				F8A7D9C427F7432D00F55DD0 /* SceneDelegate.swift in Sources */,
 				F8A7D9E127F745D300F55DD0 /* Event.swift in Sources */,
 				F8A7D9E527F749C200F55DD0 /* EventListViewController.swift in Sources */,
@@ -346,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventManager/Resources/Info.plist;
@@ -374,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventManager/Resources/Info.plist;

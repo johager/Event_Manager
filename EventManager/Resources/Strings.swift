@@ -11,6 +11,7 @@ enum Strings {
     static let clockImageName = "clock"
     static let clockFillImageName = "clock.fill"
     static let coreDataModelName = "DataModel"
+    static let dateKey = "date"
     static let eventCell = "eventCell"
     static let eventEntityName = "Event"
     static let nameKey = "name"

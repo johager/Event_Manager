@@ -15,14 +15,16 @@ class EventController {
     
     lazy var fetchRequest: NSFetchRequest<Event> = {
         let request = NSFetchRequest<Event>(entityName: Strings.eventEntityName)
-        request.sortDescriptors = [NSSortDescriptor(key: Strings.nameKey, ascending: true)]
+        request.sortDescriptors = [SortBy.name.sortDescriptor]
         return request
     }()
+    
+    // MARK: - Init
     
     private init() {
         fetchEvents()
     }
-    
+
     // MARK: - CRUD
     
     func createEvent(name: String, date: Date) {
@@ -37,6 +39,11 @@ class EventController {
         } catch {
             print("Error fetching events: \(error.localizedDescription)")
         }
+    }
+    
+    func setSortBy(to sortBy: SortBy) {
+        fetchRequest.sortDescriptors = [sortBy.sortDescriptor]
+        fetchEvents()
     }
     
     func update(_ event: Event, name: String, date: Date) {

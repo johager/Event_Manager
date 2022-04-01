@@ -7,15 +7,42 @@
 
 import UIKit
 
-class EventListViewController: UITableViewController {
+class EventListViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpViews()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
+    // MARK: - View Methods
+    
+    func setUpViews() {
+        segmentedControl.setTitle("Name", forSegmentAt: 0)
+        segmentedControl.setTitle("Date", forSegmentAt: 1)
+        segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChanged(_:)), for: .valueChanged)
+        
+        tableView.dataSource = self
+    }
+    
+    // MARK: - Actions
+    
+    @objc func handleSegmentedControlChanged(_ segmentedControl: UISegmentedControl) {
+        guard let sortBy = SortBy(rawValue: segmentedControl.selectedSegmentIndex) else { return }
+        EventController.shared.setSortBy(to: sortBy)
+        tableView.reloadData()
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,13 +56,13 @@ class EventListViewController: UITableViewController {
 
 // MARK: - UITableViewDataSource
 
-extension EventListViewController {
+extension EventListViewController: UITableViewDataSource {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return EventController.shared.events.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Strings.eventCell, for: indexPath) as? EventTableViewCell
         else { return UITableViewCell() }
         
@@ -44,7 +71,7 @@ extension EventListViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         EventController.shared.deleteEvent(atIndex: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
