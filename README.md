@@ -12,6 +12,8 @@ Additions to the baseline project:
 - The events list can be sorted by name or date.
 - User notifications can be sent at the time of the event, an hour before, a day before, and/or a week before.
 
+Used a lightweight migration of the persistent store when changing the CoreData data model to handle the notifications.
+
 ### Technoloy
 
 Swift, UIKit, CoreData, UserNotifications
