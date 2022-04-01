@@ -9,9 +9,7 @@ import UIKit
 
 class EventListViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

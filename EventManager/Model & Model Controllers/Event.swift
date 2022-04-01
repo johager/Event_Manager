@@ -16,10 +16,6 @@ class Event: NSManagedObject {
     @NSManaged var isAttending: Bool
     @NSManaged var name: String
     
-    // MARK: - Properties
-    
-    var id: String { objectID.uriRepresentation().absoluteString }
-    
     // MARK: - Init
     
     @discardableResult convenience init(name: String, date: Date, isAttending: Bool = true, context: NSManagedObjectContext = CoreDataStack.context) {
