@@ -22,6 +22,8 @@
 		F8A7D9E927F74BFD00F55DD0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9E827F74BFD00F55DD0 /* EventTableViewCell.swift */; };
 		F8A7D9EB27F759B000F55DD0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9EA27F759B000F55DD0 /* Date+.swift */; };
 		F8A7D9ED27F75CFE00F55DD0 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */; };
+		F8A7D9F027F76F6F00F55DD0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9EF27F76F6F00F55DD0 /* NotificationManager.swift */; };
+		F8A7D9F227F7707A00F55DD0 /* EventNotificationTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D9F127F7707A00F55DD0 /* EventNotificationTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		F8A7D9E827F74BFD00F55DD0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		F8A7D9EA27F759B000F55DD0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
+		F8A7D9EE27F766E100F55DD0 /* DataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		F8A7D9EF27F76F6F00F55DD0 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		F8A7D9F127F7707A00F55DD0 /* EventNotificationTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNotificationTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 				F8A7D9C127F7432D00F55DD0 /* AppDelegate.swift */,
 				F8A7D9C327F7432D00F55DD0 /* SceneDelegate.swift */,
 				F8A7D9EA27F759B000F55DD0 /* Date+.swift */,
+				F8A7D9EF27F76F6F00F55DD0 /* NotificationManager.swift */,
 				F8A7D9DE27F7453500F55DD0 /* Strings.swift */,
 				F8A7D9CA27F7432E00F55DD0 /* Assets.xcassets */,
 				F8A7D9CF27F7432E00F55DD0 /* Info.plist */,
@@ -112,6 +118,7 @@
 				F8A7D9D927F744AE00F55DD0 /* DataModel.xcdatamodeld */,
 				F8A7D9E027F745D300F55DD0 /* Event.swift */,
 				F8A7D9E227F746DE00F55DD0 /* EventController.swift */,
+				F8A7D9F127F7707A00F55DD0 /* EventNotificationTime.swift */,
 				F8A7D9EC27F75CFE00F55DD0 /* SortBy.swift */,
 			);
 			path = "Model & Model Controllers";
@@ -199,10 +206,12 @@
 			files = (
 				F8A7D9EB27F759B000F55DD0 /* Date+.swift in Sources */,
 				F8A7D9DB27F744AE00F55DD0 /* DataModel.xcdatamodeld in Sources */,
+				F8A7D9F227F7707A00F55DD0 /* EventNotificationTime.swift in Sources */,
 				F8A7D9C227F7432D00F55DD0 /* AppDelegate.swift in Sources */,
 				F8A7D9DF27F7453500F55DD0 /* Strings.swift in Sources */,
 				F8A7D9E727F749DB00F55DD0 /* EventDetailViewController.swift in Sources */,
 				F8A7D9ED27F75CFE00F55DD0 /* SortBy.swift in Sources */,
+				F8A7D9F027F76F6F00F55DD0 /* NotificationManager.swift in Sources */,
 				F8A7D9C427F7432D00F55DD0 /* SceneDelegate.swift in Sources */,
 				F8A7D9E127F745D300F55DD0 /* Event.swift in Sources */,
 				F8A7D9E527F749C200F55DD0 /* EventListViewController.swift in Sources */,
@@ -354,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventManager/Resources/Info.plist;
@@ -382,7 +391,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventManager/Resources/Info.plist;
@@ -431,9 +440,10 @@
 		F8A7D9D927F744AE00F55DD0 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F8A7D9EE27F766E100F55DD0 /* DataModel 2.xcdatamodel */,
 				F8A7D9DA27F744AE00F55DD0 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = F8A7D9DA27F744AE00F55DD0 /* DataModel.xcdatamodel */;
+			currentVersion = F8A7D9EE27F766E100F55DD0 /* DataModel 2.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -15,5 +15,7 @@ enum Strings {
     static let eventCell = "eventCell"
     static let eventEntityName = "Event"
     static let nameKey = "name"
+    static let notificationCategoryIdentifier = "eventNotification"
+    static let notificationIdKey = "notificationID"
     static let showEventDetails = "showEventDetails"
 }

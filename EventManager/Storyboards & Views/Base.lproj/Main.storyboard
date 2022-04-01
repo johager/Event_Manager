@@ -62,7 +62,7 @@
                                                     <rect key="frame" x="20" y="15" width="374" height="123"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Rj-qU-1ck">
-                                                            <rect key="frame" x="0.0" y="42" width="334" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="42" width="295" height="39.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUI-Fa-MMG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="48.5" height="17"/>
@@ -78,6 +78,12 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXc-wH-g2U">
+                                                            <rect key="frame" x="311" y="51.5" width="23" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI9-88-KPg">
                                                             <rect key="frame" x="350" y="49.5" width="24" height="24"/>
                                                             <constraints>
@@ -102,6 +108,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="jho-Kq-sgn" id="2dP-Q4-inv"/>
+                                            <outlet property="hasAlarmLabel" destination="pXc-wH-g2U" id="GDU-si-Gkj"/>
                                             <outlet property="isAttendingButton" destination="NI9-88-KPg" id="t2m-1w-ppl"/>
                                             <outlet property="nameLabel" destination="gUI-Fa-MMG" id="E3D-mD-Z0G"/>
                                             <segue destination="ViH-FD-wRo" kind="show" identifier="showEventDetails" id="ULJ-A4-JH8"/>
@@ -158,16 +165,87 @@
                                     <!--2020-01-01 07:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nW7-N3-UOk">
+                                <rect key="frame" x="32" y="572" width="169.5" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1ut-e1-4oy">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-3s-lzX">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzz-RC-YVT">
+                                                <rect key="frame" x="57" y="0.0" width="70.5" height="31"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RpA-96-IHB">
+                                        <rect key="frame" x="0.0" y="39" width="165" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bh9-Pg-jk8">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Hour before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC4-PI-EAY">
+                                                <rect key="frame" x="57" y="0.0" width="108" height="31"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JVP-TZ-ds3">
+                                        <rect key="frame" x="0.0" y="78" width="158.5" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Usp-KU-duc">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Day Before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4e-yA-SAJ">
+                                                <rect key="frame" x="57" y="0.0" width="101.5" height="31"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-ko-poR">
+                                        <rect key="frame" x="0.0" y="117" width="169.5" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8pC-3d-GKo">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Week Before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbe-U2-J4K">
+                                                <rect key="frame" x="57" y="0.0" width="112.5" height="31"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gp-yQ-1Ly">
+                                <rect key="frame" x="16" y="539" width="47.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I0W-Ol-M8w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nW7-N3-UOk" firstAttribute="leading" secondItem="I0W-Ol-M8w" secondAttribute="leading" constant="32" id="9P4-AO-7tW"/>
                             <constraint firstItem="LGX-eO-j5l" firstAttribute="trailing" secondItem="I0W-Ol-M8w" secondAttribute="trailing" id="9lS-Bf-m82"/>
                             <constraint firstItem="LGX-eO-j5l" firstAttribute="leading" secondItem="I0W-Ol-M8w" secondAttribute="leading" id="BJP-SJ-5Jx"/>
                             <constraint firstItem="LGX-eO-j5l" firstAttribute="top" secondItem="ImA-2p-8uk" secondAttribute="bottom" constant="8" id="HWM-kT-FWI"/>
                             <constraint firstItem="I0W-Ol-M8w" firstAttribute="trailing" secondItem="ImA-2p-8uk" secondAttribute="trailing" constant="8" id="Oa3-e9-0pU"/>
+                            <constraint firstItem="9gp-yQ-1Ly" firstAttribute="top" secondItem="LGX-eO-j5l" secondAttribute="bottom" constant="8" id="Tta-00-BR5"/>
+                            <constraint firstItem="nW7-N3-UOk" firstAttribute="top" secondItem="9gp-yQ-1Ly" secondAttribute="bottom" constant="16" id="aPc-33-UfK"/>
                             <constraint firstItem="ImA-2p-8uk" firstAttribute="leading" secondItem="I0W-Ol-M8w" secondAttribute="leading" constant="8" id="drH-xV-C9y"/>
                             <constraint firstItem="ImA-2p-8uk" firstAttribute="top" secondItem="I0W-Ol-M8w" secondAttribute="top" constant="8" id="e3n-C0-ckT"/>
+                            <constraint firstItem="9gp-yQ-1Ly" firstAttribute="leading" secondItem="I0W-Ol-M8w" secondAttribute="leading" constant="16" id="q3D-UR-hPZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wyA-ul-qAu">
@@ -178,10 +256,46 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="alarm1DaySwitch" destination="Usp-KU-duc" id="hX2-oy-Jxe"/>
+                        <outlet property="alarm1HourSwitch" destination="bh9-Pg-jk8" id="i0C-DC-bm1"/>
+                        <outlet property="alarm1WeekSwitch" destination="8pC-3d-GKo" id="FJe-l3-fby"/>
+                        <outlet property="alarmAtEventSwitch" destination="qFA-3s-lzX" id="dXf-Bo-grd"/>
                         <outlet property="datePicker" destination="LGX-eO-j5l" id="kBy-HO-mF7"/>
                         <outlet property="nameTextField" destination="ImA-2p-8uk" id="DtM-Oq-uUD"/>
                     </connections>
                 </viewController>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" id="Bbo-YU-Hn4">
+                    <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-2z-ZSQ">
+                            <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-ga-5Tl">
+                            <rect key="frame" x="57" y="0.0" width="35.5" height="31"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="Qgz-ZZ-24m"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" id="CQC-Cx-zX5">
+                    <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUn-EF-M86">
+                            <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z6-nN-d6r">
+                            <rect key="frame" x="57" y="0.0" width="35.5" height="31"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="NWk-yS-Vyw"/>
+                </stackView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0m-WV-YuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2705.7971014492755" y="73.660714285714278"/>
