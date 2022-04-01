@@ -10,7 +10,8 @@ Additions to the baseline project:
 
 - The eventCell includes the event date.
 - The events list can be sorted by name or date.
+- User notifications can be sent at the time of the event, an hour before, a day before, and/or a week before.
 
 ### Technoloy
 
-Swift, UIKit, CoreData
+Swift, UIKit, CoreData, UserNotifications
