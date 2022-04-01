@@ -123,7 +123,7 @@
                             <constraint firstItem="j5a-Y8-MtK" firstAttribute="trailing" secondItem="yJe-wv-zgb" secondAttribute="trailing" id="gwr-Nq-r8f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aoK-i5-PQb">
+                    <navigationItem key="navigationItem" title="Events" id="aoK-i5-PQb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="95x-ja-PIt">
                             <connections>
                                 <segue destination="ViH-FD-wRo" kind="show" id="yZl-AA-2gS"/>
